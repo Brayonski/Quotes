@@ -1,9 +1,9 @@
-<app-form (emitQuote)="addQuote($event)" ></app-form>
+<app-form (emitQuote)="addQuote($event)"></app-form>
 <div *ngFor="let quote of quotes; let i=index">
     <p appHighlight>
         Quote:{{quote.quotestr}}
     </p>
 
-<app-quote-details [quote="quote"] ></app-quote-details>
+    <app-quote-details [quote]="quote"></app-quote-details>
 
 </div>
