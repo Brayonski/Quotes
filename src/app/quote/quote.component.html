@@ -1,6 +1,9 @@
 <app-header></app-header>
 <app-form (emitQuote)="addQuote($event)"></app-form>
 <div *ngFor="let quote of quotes; let i=index">
-    
+
     <app-quote-details [quote]="quote"></app-quote-details>
+    <button class="btn btn-success" (click)="upvote(i)" >Upvote</button>
+    <button class="btn btn-info">Downvote</button>
+    <button class="btn btn-danger">Delete</button>
 </div>
