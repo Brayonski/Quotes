@@ -18,7 +18,7 @@ export class QuoteComponent implements OnInit {
     this.quotes[i].downvotes +=1
   }
   deleteQuote(i){
-    if(confirm("Psst! sure you want to delete?")){
+    if(confirm("Psst! sure you want to?")){
       this.quotes.splice(i,1)
     }
   }
