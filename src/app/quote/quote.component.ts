@@ -17,6 +17,11 @@ export class QuoteComponent implements OnInit {
   downvote(i){
     this.quotes[i].downvotes +=1
   }
+  deleteQuote(i){
+    if(confirm("Psst! sure you want to delete?")){
+      this.quotes.splice(i,1)
+    }
+  }
   constructor() { }
 
   ngOnInit() {
