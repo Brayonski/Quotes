@@ -7,10 +7,12 @@ import { Quote } from '../quote'
 })
 export class FormComponent implements OnInit {
   quotePublisher:string
+  quoteAuthor:string
+  quoteString:string
   myQuote:any
   @Output() emitQuote = new EventEmitter();
   submitQuote(){
-    this.myQuote= new Quote(this.quotePublisher)
+    this.myQuote= new Quote(this.quotePublisher, this.quoteAuthor,this.quoteString)
     this.emitQuote.emit(this.myQuote)
   }
   constructor() { }
