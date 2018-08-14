@@ -2,22 +2,26 @@
 
   <form (ngSubmit)='submitQuote()'>
     <div class="form-group">
-      <label for="name">Name</label>
-      <input id="name" class="form-control" type="text" name="publisher" [(ngModel)]="quotePublisher" placeholder="Your Name" required>
+      <label for="name" class="badge badge-pill badge-primary">Name</label>
+      <input id="name" class="form-control" type="text" name="publisher" [(ngModel)]="quotePublisher" placeholder="Your Name" required >
+  
     </div>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert alert-danger">
+</div>
 
     <div class="form-group">
-      <label for="name">Author</label>
+      <label for="name" class="badge badge-pill badge-primary">Author</label>
       <input class="form-control" type="text" name="author"  [(ngModel)]="quoteAuthor"placeholder="Author's Name" required>
     </div>
 
     <div class="form-group">
-      <label for="name">Quote</label>
-      <input class="form-control" type="text" name="quote" [(ngModel)]="quoteString" placeholder="Quote" required>
+      <label for="name" class="badge badge-pill badge-primary">Quote</label>
+      <input class="form-control" type="text" name="quotestr" [(ngModel)]="quoteString" placeholder="Quote" required>
     </div>
 
     <div class="form-group">
-      <button type="submit" id="post-button" class="btn btn-info">Post Quote</button>
+      <button type="submit" [disabled]="!quoteString" id="post-button" class="btn btn-info">Post Quote</button>
     </div>
   </form>
 
