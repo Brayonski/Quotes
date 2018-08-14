@@ -8,7 +8,7 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
   quotes=[]
   addQuote(myQuote){
-    this.quotes.push(myQuote)
+    this.quotes.push(myQuote);
   }
 
   upvote(i){
