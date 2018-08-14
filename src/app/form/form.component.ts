@@ -9,11 +9,14 @@ export class FormComponent implements OnInit {
   quotePublisher:string
   quoteAuthor:string
   quoteString:string
-  myQuote:any
+  myQuote:any;
   @Output() emitQuote = new EventEmitter();
   submitQuote(){
     this.myQuote= new Quote(this.quotePublisher, this.quoteAuthor,this.quoteString)
     this.emitQuote.emit(this.myQuote)
+    this.quotePublisher='';
+    this.quoteAuthor='';
+    this.quoteString='';
   }
   constructor() { }
 
