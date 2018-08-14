@@ -3,8 +3,8 @@
 <div *ngFor="let quote of quotes; let i=index">
 
     <app-quote-details [quote]="quote"></app-quote-details>
-    <button class="btn btn-success" (click)="upvote(i)" >Upvote</button>
-    <button class="btn btn-info" (click)="downvote(i)">Downvote</button>
+    <button class="btn btn-success" (click)="upvote(i)" >  Upvote <span class="badge badge-light">{{quote.upvotes}}</span> </button>
+    <button class="btn btn-info" (click)="downvote(i)">Downvote <span class="badge badge-light">{{quote.downvotes}}</span></button>
     <button class="btn btn-danger" (click)="deleteQuote(i)">Delete</button>
     
 </div>
